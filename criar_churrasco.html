@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles.css">
-    <script defer src="assets/scripts.js"></script>
-    <title>Editar Churrasco</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script defer src="/assets/scripts.js"></script>
+  <title>CRUD Churrasco</title>
 </head>
 
 <body>
-    <form id="formularioEditar">
-        <label for="dataEdicao">Data do Churrasco:</label><br>
-        <input id="dataEdicao" type="date"><br>
-        <label for="homensEdicao">Quantidade de Homens:</label><br>
-        <input id="homensEdicao" type="number"><br>
-        <label for="mulheresEdicao">Quantidade de Mulheres:</label><br>
-        <input id="mulheresEdicao" type="number"><br>
-        <label for="criancasEdicao">Quantidade de Crianças:</label><br>
-        <input id="criancasEdicao" type="number"><br>
-        <button onclick="editarChurrasco()">Editar Churrasco</button>
-    </form>
 
+  <form id="formularioCriar">
+    <label for="data">Data do Churrasco:</label><br>
+
+    <input id="data" type="date"><br>
+
+    <label for="homens">Quantidade de Homens:</label><br>
+
+    <input id="homens" type="number"><br>
+
+    <label for="mulheres">Quantidade de Mulheres:</label><br>
+
+    <input id="mulheres" type="number"><br>
+
+    <label for="criancas">Quantidade de Crianças:</label><br>
+
+    <input id="criancas" type="number"><br>
+
+    <button onclick="criarChurrasco()">Criar Churrasco</button>
+  </form>
+  
 </body>
 
 </html>
