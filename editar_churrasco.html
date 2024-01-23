@@ -10,7 +10,7 @@
       let mySearchParams = new URLSearchParams(document.location.search);
       let idChurrasco = mySearchParams.get("id");
 
-      let data = await fetch(http://localhost:3000/churrascos/${idChurrasco});
+      let data = await fetch("http://localhost:3000/churrascos/${idChurrasco}");
       let churrasco = await data.json();
 
       document.querySelector("input#idChurrasco").value = idChurrasco;
@@ -61,7 +61,7 @@
 
       idChurrasco = document.querySelector("input#idChurrasco").value;
 
-      fetch(http://localhost:3000/churrascos/${idChurrasco}, {
+      fetch("http://localhost:3000/churrascos/${idChurrasco}", {
         method: 'PUT',
         body: JSON.stringify(data)
       });

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRUD Churrasco</title>
 </head>
+
 <body>
   <section>
     <button onclick="irPagCriar()">Novo Churrasco</button>
@@ -36,10 +38,17 @@
       <td>${e.quantidadeCarvao}</td>
       <td>${e.quantidadeRefri}</td>
       <td>${e.quantidadeCerveja}</td>
-      <td><button onclick("irPagEditar(${e.id})")>Editar</button><button onclick("deletarChurrasco(${e.id})")>Deletar</button></td>`;
+      <td><button onclick("irPagEditar(${e.id})")>Editar</button><button onclick="deletarChurrasco(${e.id})">Deletar</button></td>`;
         body.appendChild(row);
       });
     }
+    
+    async function deletarChurrasco(id) {
+      await fetch(`http://localhost:3000/churrascos/${id}`, {
+        method: 'DELETE',
+      });
+    }
+    
     listar();
   </script>
 
