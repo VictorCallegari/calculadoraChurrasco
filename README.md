@@ -31,10 +31,3 @@ Sinta-se à vontade para contribuir com melhorias. Para contribuir:
 ## Licença
 
 Este projeto é distribuído sob a licença [MIT](LICENSE).
-
-## Contato
-
-Para qualquer dúvida ou sugestão, entre em contato conosco:
-
-- Email: seu-email@example.com
-- Twitter: [@seu_usuario_twitter](https://twitter.com/seu_usuario_twitter)
