@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Churrasco</title>
+  <script>
+    async function loadData() {
+      let mySearchParams = new URLSearchParams(document.location.search);
+      let idChurrasco = mySearchParams.get("id");
+
+      let data = await fetch(http://localhost:3000/churrascos/${idChurrasco});
+      let churrasco = await data.json();
+
+      document.querySelector("input#idChurrasco").value = idChurrasco;
+      document.querySelector("input#data").value = churrasco.dataChurrasco;
+      document.querySelector("input#homens").value = churrasco.quantidadeHomens;
+      document.querySelector("input#mulheres").value = churrasco.quantidadeMulheres;
+      document.querySelector("input#criancas").value = churrasco.quantidadeCriancas;
+    }
+
+    window.onload = loadData;
+  </script>
+</head>
+
+<body>
+  <form id="formularioEditar" action="index.html">
+    <input type="hidden" id="idChurrasco" />
+    <label for="data">Data do Churrasco:</label><br>
+    <input id="data" type="date"><br>
+    <label for="homens">Quantidade de Homens:</label><br>
+    <input id="homens" type="number"><br>
+    <label for="mulheres">Quantidade de Mulheres:</label><br>
+    <input id="mulheres" type="number"><br>
+    <label for="criancas">Quantidade de Crianças:</label><br>
+    <input id="criancas" type="number"><br>
+    <button onclick="editarChurrasco()">Editar Churrasco</button>
+  </form>
+
+  <script>
+
+    const inputData = document.getElementById('data')
+    const inputHomens = document.getElementById('homens')
+    const inputMulheres = document.getElementById('mulheres')
+    const inputCriancas = document.getElementById('criancas')
+
+    function editarChurrasco() {
+      const data = {
+        dataChurrasco: inputData.value,
+        quantidadeHomens: inputHomens.value,
+        quantidadeMulheres: inputMulheres.value,
+        quantidadeCriancas: inputCriancas.value,
+        quantidadePessoas: Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value),
+        quantidadeCarne: Number(inputHomens.value) * 0.4 + Number(inputMulheres.value) * 0.32 + Number(inputCriancas.value) * 0.2,
+        quantidadePaoAlho: Number(inputHomens.value) * 2 + Number(inputMulheres.value) * 2 + Number(inputCriancas.value),
+        quantidadeCarvao: Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value),
+        quantidadeRefri: 2 * (Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value)) / 5,
+        quantidadeCerveja: 3 * 600 * (Number(inputHomens.value) + Number(inputMulheres.value)) / 1000
+      }
+
+      idChurrasco = document.querySelector("input#idChurrasco").value;
+
+      fetch(http://localhost:3000/churrascos/${idChurrasco}, {
+        method: 'PUT',
+        body: JSON.stringify(data)
+      });
+
+      window.location.href = "index.html";
+
+    }
+
+  </script>
+
+</body>
+
+
+
+</html>
