@@ -29,4 +29,13 @@
 
 </body>
 
+<script>
+  async function deletar(id) {
+    await fetch(`http://localhost:3000/churrascos/${id}`, {
+      method: 'DELETE',
+    });
+  }
+
+</script>
+
 </html>
