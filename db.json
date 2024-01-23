@@ -1,0 +1,17 @@
+{
+    "churrascos": [
+      {
+        "id": "1",
+        "quantidadeHomens": "0",
+        "quantidadeMulheres": "0",
+        "quantidadeCriancas": "0",
+        "quantidadePessoas": "0",
+        "quantidadePaoAlho": "0",
+        "quantidadeCarne": "0",
+        "quantidadeRefri": "0",
+        "quantidadeCerveja": "0",
+        "quantidadeCarvao": "0",
+        "dataChurrasco": ""
+      }
+    ]
+  }
