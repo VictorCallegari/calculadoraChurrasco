@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script defer src="assets/scripts.js"></script>
   <title>CRUD Churrasco</title>
 </head>
-
 <body>
   <section>
     <button onclick="irPagCriar()">Novo Churrasco</button>
@@ -19,13 +15,33 @@
       <th>Quantidade de Pessoas</th>
       <th>Carne (Kg)</th>
       <th>Pão de Alho</th>
-      <th>Carvâo (Kg)</th>
+      <th>Carvão (Kg)</th>
       <th>Refri (L)</th>
       <th>Cerveja (L)</th>
       <th>Ação</th>
     </tr>
+    <tbody id="body"></tbody>
   </table>
-
+  <script>
+    async function listar() {
+      const body = document.getElementById("body");
+      const response = await fetch("http://localhost:3000/churrascos");
+      const data = await response.json();
+      data.forEach(e => {
+        let row = document.createElement("tr");
+        row.innerHTML = `<td>${data[0].data}</td>
+      <td>${e.quantidadePessoas}</td>
+      <td>${e.quantidadeCarne}</td>
+      <td>${e.quantidadePaoAlho}</td>
+      <td>${e.quantidadeCarvao}</td>
+      <td>${e.quantidadeRefri}</td>
+      <td>${e.quantidadeCerveja}</td>
+      <td><button onclick("irPagEditar(${e.id})")>Editar</button><button onclick("deletarChurrasco(${e.id})")>Deletar</button></td>`;
+        body.appendChild(row);
+      });
+    }
+    listar();
+  </script>
 
 </body>
 
