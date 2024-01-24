@@ -53,7 +53,7 @@ async function criarChurrasco() {
 
 
   const elementos = {
-    id: ++lastId,
+    id: `${++lastId}`,
     quantidadeHomens: homens.value,
     quantidadeMulheres: mulheres.value,
     quantidadeCriancas: criancas.value,

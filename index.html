@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="/assets/scripts.js"></script>
   <title>CRUD Churrasco</title>
 </head>
 
@@ -42,13 +43,13 @@
         body.appendChild(row);
       });
     }
-    
+
     async function deletarChurrasco(id) {
       await fetch(`http://localhost:3000/churrascos/${id}`, {
         method: 'DELETE',
       });
     }
-    
+
     listar();
   </script>
 
