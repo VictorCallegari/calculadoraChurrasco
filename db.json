@@ -1,19 +1,6 @@
 {
   "churrascos": [
     {
-      "id": "3",
-      "quantidadeHomens": "10",
-      "quantidadeMulheres": "10",
-      "quantidadeCriancas": "10",
-      "quantidadePessoas": 30,
-      "quantidadePaoAlho": 50,
-      "quantidadeCarne": 9.2,
-      "quantidadeRefri": 6,
-      "quantidadeCerveja": 60,
-      "quantidadeCarvao": 30,
-      "dataChurrasco": "1998-01-24"
-    },
-    {
       "id": "6",
       "quantidadeHomens": "10",
       "quantidadeMulheres": "10",
@@ -25,6 +12,32 @@
       "quantidadeCerveja": 60,
       "quantidadeCarvao": 30,
       "dataChurrasco": "2025-03-30"
+    },
+    {
+      "id": "7",
+      "quantidadeHomens": "5",
+      "quantidadeMulheres": "5",
+      "quantidadeCriancas": "5",
+      "quantidadePessoas": 15,
+      "quantidadePaoAlho": 25,
+      "quantidadeCarne": 4.6,
+      "quantidadeRefri": 3,
+      "quantidadeCerveja": 30,
+      "quantidadeCarvao": 15,
+      "dataChurrasco": "1998-02-24"
+    },
+    {
+      "id": "8",
+      "quantidadeHomens": "",
+      "quantidadeMulheres": "",
+      "quantidadeCriancas": "",
+      "quantidadePessoas": 0,
+      "quantidadePaoAlho": 0,
+      "quantidadeCarne": 0,
+      "quantidadeRefri": 0,
+      "quantidadeCerveja": 0,
+      "quantidadeCarvao": 0,
+      "dataChurrasco": ""
     }
   ]
 }
