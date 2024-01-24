@@ -2,6 +2,11 @@ function irPagCriar() {
   window.location.href = "/criar_churrasco.html"
 }
 
+function irPagEditar (id) {
+  window.location.href = `/editar_churrasco.html?id=${id}`;
+}
+
+
 
 async function getLastId() {
   const response = await fetch('http://localhost:3000/churrascos');
@@ -9,7 +14,9 @@ async function getLastId() {
   return data[data.length - 1].id;
 }
 
-async function criarChurrasco() {
+async function criarChurrasco(event) {
+  event.preventDefault();
+      
   let data = document.getElementById('data')
   let homens = document.getElementById('homens')
   let mulheres = document.getElementById('mulheres')
@@ -69,5 +76,7 @@ async function criarChurrasco() {
     method: 'POST',
     body: JSON.stringify(elementos),
   })
+
+  window.location.href = "/index.html";
 
 }

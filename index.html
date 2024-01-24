@@ -30,16 +30,18 @@
       const body = document.getElementById("body");
       const response = await fetch("http://localhost:3000/churrascos");
       const data = await response.json();
+      //console.log(data)
       data.forEach(e => {
         let row = document.createElement("tr");
-        row.innerHTML = `<td>${data[0].data}</td>
+        row.innerHTML =
+          `<td>${e.dataChurrasco}</td>
       <td>${e.quantidadePessoas}</td>
       <td>${e.quantidadeCarne}</td>
       <td>${e.quantidadePaoAlho}</td>
       <td>${e.quantidadeCarvao}</td>
       <td>${e.quantidadeRefri}</td>
       <td>${e.quantidadeCerveja}</td>
-      <td><button onclick("irPagEditar(${e.id})")>Editar</button><button onclick="deletarChurrasco(${e.id})">Deletar</button></td>`;
+      <td><button onclick="irPagEditar(${e.id})">Editar</button><button onclick="deletarChurrasco(${e.id})">Deletar</button></td>`;
         body.appendChild(row);
       });
     }
@@ -52,6 +54,7 @@
 
     listar();
   </script>
+
 
 </body>
 
