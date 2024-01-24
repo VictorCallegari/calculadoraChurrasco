@@ -30,9 +30,11 @@
       const body = document.getElementById("body");
       const response = await fetch("http://localhost:3000/churrascos");
       const data = await response.json();
+      //console.log(data)
       data.forEach(e => {
         let row = document.createElement("tr");
-        row.innerHTML = `<td>${data[0].data}</td>
+        row.innerHTML =
+          `<td>${e.dataChurrasco}</td>
       <td>${e.quantidadePessoas}</td>
       <td>${e.quantidadeCarne}</td>
       <td>${e.quantidadePaoAlho}</td>
