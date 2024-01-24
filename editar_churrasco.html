@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Churrasco</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="hidden" id="idChurrasco" />
+
+    <label for="data">Data do Churrasco:</label><br>
+    <input id="data" type="date"><br>
+
+    <label for="homens">Quantidade de Homens:</label><br>
+    <input id="homens" type="number"><br>
+
+    <label for="mulheres">Quantidade de Mulheres:</label><br>
+    <input id="mulheres" type="number"><br>
+
+    <label for="criancas">Quantidade de Crianças:</label><br>
+    <input id="criancas" type="number"><br>
+
+    <button onclick="editarChurrasco(event)">Editar Churrasco</button>
+  </form>
+
+  <script>
+
+    function retornar() {
+      window.location.href = "/index.html";
+    }
+
+    async function editarChurrasco(event) {
+      event.preventDefault();
+      
+
+      try {
+
+        let data = document.getElementById('data')
+        let homens = document.getElementById('homens')
+        let mulheres = document.getElementById('mulheres')
+        let criancas = document.getElementById('criancas')
+
+        let homensValor = Number(homens.value)
+        let mulheresValor = Number(mulheres.value)
+        let criancasValor = Number(criancas.value)
+
+        //console.log(homensValor)
+        //console.log(mulheresValor)
+        //console.log(criancasValor)
+        //console.log(data.value)
+
+        const soma = homensValor + mulheresValor + criancasValor;
+
+        /*Calculo*/
+
+        const kgHomem = homensValor * 0.4;
+        const kgMulher = mulheresValor * 0.32;
+        const kgCrianca = criancasValor * 0.20;
+
+        const somaKgCarne = kgHomem + kgMulher + kgCrianca;
+
+        /*pao de alho*/
+
+        const paoAdulto = (homensValor + mulheresValor) * 2;
+        const paoCrianca = criancasValor * 1;
+
+        const somaPaoDeAlho = paoAdulto + paoCrianca;
+
+        /*Carvão*/
+
+        const carvao = (soma * 1)
+
+        /*Refrigerante*/
+
+        let garrafas = Math.ceil(soma / 5);
+
+        /*Cerveja*/
+
+        const cerveja = (homensValor + mulheresValor) * 3;
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get('id');
+
+        const elementos = {
+          id: id,
+          quantidadeHomens: homens.value,
+          quantidadeMulheres: mulheres.value,
+          quantidadeCriancas: criancas.value,
+          quantidadePessoas: soma,
+          quantidadePaoAlho: somaPaoDeAlho,
+          quantidadeCarne: somaKgCarne,
+          quantidadeRefri: garrafas,
+          quantidadeCerveja: cerveja,
+          quantidadeCarvao: carvao,
+          dataChurrasco: data.value
+        }
+
+        const response = await fetch(`http://localhost:3000/churrascos/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(elementos),
+        })
+
+
+        window.location.href = "/index.html";
+
+      } catch (error) {
+        console.error('Um erro ocorreu:', error);
+      } 
+
+    }
+
+
+  </script>
+
+</body>
+
+
+
+</html>
