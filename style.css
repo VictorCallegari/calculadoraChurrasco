@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.textoInical{
+    text-align: center;
+}
+
+.titulo{
+    font-size: 40px;
+}
+
+.textoApresentacao{
+    margin: 5vh;
+    font-size: larger;
+    color: #fff;
+}
+
+.body{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background:  #42373d;
+    transition: background .5s;
+}
+
+
+/*Estilização de botão tema escuro*/
+.body.active{
+    background: #1f1e1e;
+}
+
+.body.active p{
+    color: #fff;
+}
+
+.btn{
+    background: #000;
+    width: 60px;
+    height: 30px;
+    border-radius: 60px;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50%;
+    top: 5%;
+    left: 15px;
+    transform: translate(-50%);
+    transition: left .5s;
+}
+
+.btn.active::before{
+    left: 50px;
+}
+
+/*ESTILIZAÇÃO DE FORMULARIO */
+
+.titulo{
+    color:  #f45f1d;
+}
+
+form{
+    display: flex;
+    gap: 15vh;
+    padding: 10vh;
+}
+
+.input{
+    text-align: center;
+    width: 60vh;
+    height: 35vh;
+    background:  #a3928a;
+    border:solid 1px #6e605f;
+    border-radius: 10px;
+}
+
+.input label{
+    
+}
+
+.btn-editar{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    border:solid 1px #1f1e1e;
+    width: 20vh;
+    height: 5vh;
+    background: #ef5823;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+
+

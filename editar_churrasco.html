@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./tema.js" defer></script>
   <title>Editar Churrasco</title>
+
   <script>
     async function loadData() {
       let mySearchParams = new URLSearchParams(document.location.search);
@@ -24,19 +27,58 @@
   </script>
 </head>
 
-<body>
-  <form id="formularioEditar" action="index.html">
-    <input type="hidden" id="idChurrasco" />
-    <label for="data">Data do Churrasco:</label><br>
-    <input id="data" type="date"><br>
-    <label for="homens">Quantidade de Homens:</label><br>
-    <input id="homens" type="number"><br>
-    <label for="mulheres">Quantidade de Mulheres:</label><br>
-    <input id="mulheres" type="number"><br>
-    <label for="criancas">Quantidade de Crianças:</label><br>
-    <input id="criancas" type="number"><br>
-    <button onclick="editarChurrasco()">Editar Churrasco</button>
-  </form>
+<body class="body">
+  <header>
+    <p><strong>Tema escuro: </strong></p>
+    <div class="container">      
+      <div class="btn"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="textoInical">
+      <h1 class="titulo">Churrascômetro</h1>
+      <div class="textoApresentacao">
+        <p>Precisa de uma ajudinha com o churrasco? :)</p>
+        <br>
+        <p>Quantas pessoas vão participar?</p>
+      </div>
+      
+    </section>
+    <form id="formularioEditar" action="index.html">
+
+        <input type="hidden" id="idChurrasco" />
+                
+
+      <div class="input">
+        <label for="data"><strong>Data do Churrasco:</strong></label>
+        <input id="data" type="date"><br>
+      </div>
+      
+      <div class="input">
+        <label for="homens"><strong>Quantidade de Homens:</strong></label>
+        <input id="homens" type="number"><br>
+      </div>
+
+      <div class="input">
+        <label for="mulheres"><strong>Quantidade de Mulheres:</strong></label>
+        <input id="mulheres" type="number"><br>
+      </div>
+      
+      <div class="input">
+        <label for="criancas"><strong>Quantidade de Crianças:</strong></label>
+        <input id="criancas" type="number"><br>
+      </div>
+      
+    </form>
+
+    <div class="btn-editar">
+      <button onclick="editarChurrasco()"><strong>Calcular</strong></button>
+    </div>
+    
+  </main>
+
+  
 
   <script>
 
