@@ -82,40 +82,96 @@
 
   <script>
 
-    const inputData = document.getElementById('data')
-    const inputHomens = document.getElementById('homens')
-    const inputMulheres = document.getElementById('mulheres')
-    const inputCriancas = document.getElementById('criancas')
+    /*function retornar() {
+      window.location.href = "/index.html";
+    }*/
 
-    function editarChurrasco() {
-      const data = {
-        dataChurrasco: inputData.value,
-        quantidadeHomens: inputHomens.value,
-        quantidadeMulheres: inputMulheres.value,
-        quantidadeCriancas: inputCriancas.value,
-        quantidadePessoas: Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value),
-        quantidadeCarne: Number(inputHomens.value) * 0.4 + Number(inputMulheres.value) * 0.32 + Number(inputCriancas.value) * 0.2,
-        quantidadePaoAlho: Number(inputHomens.value) * 2 + Number(inputMulheres.value) * 2 + Number(inputCriancas.value),
-        quantidadeCarvao: Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value),
-        quantidadeRefri: 2 * (Number(inputHomens.value) + Number(inputMulheres.value) + Number(inputCriancas.value)) / 5,
-        quantidadeCerveja: 3 * 600 * (Number(inputHomens.value) + Number(inputMulheres.value)) / 1000
+    async function editarChurrasco(event) {
+      event.preventDefault();
+
+
+      try {
+
+        let data = document.getElementById('data')
+        let homens = document.getElementById('homens')
+        let mulheres = document.getElementById('mulheres')
+        let criancas = document.getElementById('criancas')
+
+        let homensValor = Number(homens.value)
+        let mulheresValor = Number(mulheres.value)
+        let criancasValor = Number(criancas.value)
+
+        //console.log(homensValor)
+        //console.log(mulheresValor)
+        //console.log(criancasValor)
+        //console.log(data.value)
+
+        const soma = homensValor + mulheresValor + criancasValor;
+
+        /*Calculo*/
+
+        const kgHomem = homensValor * 0.4;
+        const kgMulher = mulheresValor * 0.32;
+        const kgCrianca = criancasValor * 0.20;
+
+        const somaKgCarne = kgHomem + kgMulher + kgCrianca;
+
+        /*pao de alho*/
+
+        const paoAdulto = (homensValor + mulheresValor) * 2;
+        const paoCrianca = criancasValor * 1;
+
+        const somaPaoDeAlho = paoAdulto + paoCrianca;
+
+        /*Carvão*/
+
+        const carvao = (soma * 1)
+
+        /*Refrigerante*/
+
+        let garrafas = Math.ceil(soma / 5);
+
+        /*Cerveja*/
+
+        const cerveja = (homensValor + mulheresValor) * 3;
+
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get('id');
+
+        const elementos = {
+          id: id,
+          quantidadeHomens: homens.value,
+          quantidadeMulheres: mulheres.value,
+          quantidadeCriancas: criancas.value,
+          quantidadePessoas: soma,
+          quantidadePaoAlho: somaPaoDeAlho,
+          quantidadeCarne: somaKgCarne,
+          quantidadeRefri: garrafas,
+          quantidadeCerveja: cerveja,
+          quantidadeCarvao: carvao,
+          dataChurrasco: data.value
+        }
+
+        const response = await fetch(`http://localhost:3000/churrascos/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(elementos),
+        })
+
+
+        window.location.href = "/index.html";
+
+      } catch (error) {
+        console.error('Um erro ocorreu:', error);
       }
 
-      idChurrasco = document.querySelector("input#idChurrasco").value;
-
-      fetch("http://localhost:3000/churrascos/${idChurrasco}", {
-        method: 'PUT',
-        body: JSON.stringify(data)
-      });
-
-      window.location.href = "index.html";
-
     }
+
 
   </script>
 
 </body>
-
-
 
 </html>
