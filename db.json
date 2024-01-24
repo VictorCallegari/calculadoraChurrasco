@@ -14,19 +14,6 @@
       "dataChurrasco": "1998-01-24"
     },
     {
-      "id": "4",
-      "quantidadeHomens": "2",
-      "quantidadeMulheres": "2",
-      "quantidadeCriancas": "2",
-      "quantidadePessoas": 6,
-      "quantidadePaoAlho": 10,
-      "quantidadeCarne": 1.8399999999999999,
-      "quantidadeRefri": 2,
-      "quantidadeCerveja": 12,
-      "quantidadeCarvao": 6,
-      "dataChurrasco": "1998-02-24"
-    },
-    {
       "id": "6",
       "quantidadeHomens": "10",
       "quantidadeMulheres": "10",
