@@ -5,7 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/styles.css">
-  <script src="./tema.js" defer></script>
+  <script>
+    async function loadData() {
+      let mySearchParams = new URLSearchParams(document.location.search);
+      let idChurrasco = mySearchParams.get("id");
+
+      let data = await fetch(`http://localhost:3000/churrascos/${idChurrasco}`);
+      let churrasco = await data.json();
+
+      document.querySelector("input#idChurrasco").value = idChurrasco;
+      document.querySelector("input#data").value = churrasco.dataChurrasco;
+      document.querySelector("input#homens").value = churrasco.quantidadeHomens;
+      document.querySelector("input#mulheres").value = churrasco.quantidadeMulheres;
+      document.querySelector("input#criancas").value = churrasco.quantidadeCriancas;
+    }
+
+    window.onload = loadData;
+  </script>
   <title>Editar Churrasco</title>
  
 </head>
