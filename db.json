@@ -1,20 +1,7 @@
 {
   "churrascos": [
     {
-      "id": "7",
-      "quantidadeHomens": "5",
-      "quantidadeMulheres": "5",
-      "quantidadeCriancas": "5",
-      "quantidadePessoas": 15,
-      "quantidadePaoAlho": 25,
-      "quantidadeCarne": 4.6,
-      "quantidadeRefri": 3,
-      "quantidadeCerveja": 30,
-      "quantidadeCarvao": 15,
-      "dataChurrasco": "1998-02-24"
-    },
-    {
-      "id": "8",
+      "id": "9",
       "quantidadeHomens": "1",
       "quantidadeMulheres": "1",
       "quantidadeCriancas": "1",
@@ -24,7 +11,7 @@
       "quantidadeRefri": 1,
       "quantidadeCerveja": 6,
       "quantidadeCarvao": 3,
-      "dataChurrasco": "2024-01-24"
+      "dataChurrasco": "1998-08-02"
     }
   ]
 }
