@@ -4,13 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="./tema.js" defer></script>
   <title>Editar Churrasco</title>
+
+  <script>
+    async function loadData() {
+      let mySearchParams = new URLSearchParams(document.location.search);
+      let idChurrasco = mySearchParams.get("id");
+
+      let data = await fetch("http://localhost:3000/churrascos/${idChurrasco}");
+      let churrasco = await data.json();
+
+      document.querySelector("input#idChurrasco").value = idChurrasco;
+      document.querySelector("input#data").value = churrasco.dataChurrasco;
+      document.querySelector("input#homens").value = churrasco.quantidadeHomens;
+      document.querySelector("input#mulheres").value = churrasco.quantidadeMulheres;
+      document.querySelector("input#criancas").value = churrasco.quantidadeCriancas;
+    }
+
+    window.onload = loadData;
+  </script>
 </head>
 
-<body>
-  <main class="container">
+<body class="body">
+  <header>
+    <p><strong>Tema escuro: </strong></p>
+    <div class="container">      
+      <div class="btn"></div>
+    </div>
+  </header>
 
+<<<<<<< HEAD
     <section class="container-cards">
       <div class="container-titulo">
         <h1>Churrascômetro</h1>
@@ -36,9 +61,52 @@
       </form>
       <div class="container-botão">
         <button onclick="editarChurrasco(event)">Editar Churrasco</button>
+=======
+  <main>
+    <section class="textoInical">
+      <h1 class="titulo">Churrascômetro</h1>
+      <div class="textoApresentacao">
+        <p>Precisa de uma ajudinha com o churrasco? :)</p>
+        <br>
+        <p>Quantas pessoas vão participar?</p>
+>>>>>>> e69db13e54675b9cea69ef419fec06a978ae61ec
       </div>
+      
     </section>
+    <form id="formularioEditar" action="index.html">
+
+        <input type="hidden" id="idChurrasco" />
+                
+
+      <div class="input">
+        <label for="data"><strong>Data do Churrasco:</strong></label>
+        <input id="data" type="date"><br>
+      </div>
+      
+      <div class="input">
+        <label for="homens"><strong>Quantidade de Homens:</strong></label>
+        <input id="homens" type="number"><br>
+      </div>
+
+      <div class="input">
+        <label for="mulheres"><strong>Quantidade de Mulheres:</strong></label>
+        <input id="mulheres" type="number"><br>
+      </div>
+      
+      <div class="input">
+        <label for="criancas"><strong>Quantidade de Crianças:</strong></label>
+        <input id="criancas" type="number"><br>
+      </div>
+      
+    </form>
+
+    <div class="btn-editar">
+      <button onclick="editarChurrasco()"><strong>Calcular</strong></button>
+    </div>
+    
   </main>
+
+  
 
   <script>
 
