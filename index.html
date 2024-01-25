@@ -5,13 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer src="/assets/scripts.js"></script>
+  <link rel="stylesheet" href="assets/styles.css">
   <title>CRUD Churrasco</title>
 </head>
 
 <body>
+
   <section>
-    <button onclick="irPagCriar()">Novo Churrasco</button>
+    <button class="button-novo" onclick="irPagCriar()">Novo Churrasco</button>
   </section>
+
+  <div class="container-titulo">
+    <h1>Churrascômetro</h1>
+    <p>Fique por dentro de todas as novidades.</br>
+      Cadastre seu E-mail e receba promoções </br>
+      especiais!</p>
+  </div>
+
   <table>
     <tr>
       <th>Data</th>
@@ -41,7 +51,7 @@
       <td>${e.quantidadeCarvao}</td>
       <td>${e.quantidadeRefri}</td>
       <td>${e.quantidadeCerveja}</td>
-      <td><button onclick="irPagEditar(${e.id})">Editar</button><button onclick="deletarChurrasco(${e.id})">Deletar</button></td>`;
+      <td><button class="button-tabela" onclick="irPagEditar(${e.id})">Editar</button><button class="button-tabela" onclick="deletarChurrasco(${e.id})">Deletar</button></td>`;
         body.appendChild(row);
       });
     }

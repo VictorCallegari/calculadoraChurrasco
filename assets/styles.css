@@ -36,7 +36,7 @@ body {
 
 }
 
-#container-form {
+.container-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -106,3 +106,53 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 
+table {
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: rgb(163, 147, 138);
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+tr {
+  border: 1px solid rgba(65, 55, 60, 255);
+
+}
+
+th {
+  color: rgba(65, 55, 60, 255);
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(65, 55, 60, 255);
+}
+
+td {
+  color: rgba(65, 55, 60, 255);
+  padding: 5px;
+  text-align: center;
+  border: 1px solid rgba(65, 55, 60, 255);
+}
+
+p {
+  margin: auto;
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  width: 380px;
+  color: white;
+  text-align: center;
+}
+
+.button-tabela {
+  height: 30px;
+  width: 80px;
+  margin: 5px;
+}
+
+.button-novo {
+  margin: 20px;
+}

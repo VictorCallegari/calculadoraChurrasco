@@ -4,33 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="/assets/styles.css">
   <script defer src="/assets/scripts.js"></script>
   <title>CRUD Churrasco</title>
 </head>
 
 <body>
 
-  <form id="formularioCriar">
-    <label for="data">Data do Churrasco:</label><br>
+  <main class="container">
 
-    <input id="data" type="date"><br>
+    <section class="container-cards">
+      <div class="container-titulo">
+        <h1>Churrascômetro</h1>
+        <p>Fique por dentro de todas as novidades.</br>
+          Cadastre seu E-mail e receba promoções </br>
+          especiais!</p>
+      </div>
+      <form id="formularioCriar" class="container-form">
+        <label for="data">Data do Churrasco:</label>
 
-    <label for="homens">Quantidade de Homens:</label><br>
+        <input id="data" type="date">
 
-    <input id="homens" type="number"><br>
+        <label for="homens">Quantidade de Homens:</label>
 
-    <label for="mulheres">Quantidade de Mulheres:</label><br>
+        <input id="homens" type="number">
 
-    <input id="mulheres" type="number"><br>
+        <label for="mulheres">Quantidade de Mulheres:</label>
 
-    <label for="criancas">Quantidade de Crianças:</label><br>
+        <input id="mulheres" type="number">
 
-    <input id="criancas" type="number"><br>
+        <label for="criancas">Quantidade de Crianças:</label>
 
-    <button onclick="criarChurrasco(event)">Criar Churrasco</button>
-  </form>
-  
+        <input id="criancas" type="number">
+
+      </form>
+
+      <div class="container-botão">
+        <button onclick="criarChurrasco(event)">Criar Churrasco</button>
+      </div>
+    </section>
+  </main>
+
 </body>
 
 </html>
