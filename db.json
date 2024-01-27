@@ -2,16 +2,29 @@
   "churrascos": [
     {
       "id": "1",
+      "quantidadeHomens": "5",
+      "quantidadeMulheres": "5",
+      "quantidadeCriancas": "5",
+      "quantidadePessoas": 15,
+      "quantidadePaoAlho": 25,
+      "quantidadeCarne": 4.6,
+      "quantidadeRefri": 3,
+      "quantidadeCerveja": 30,
+      "quantidadeCarvao": 15,
+      "dataChurrasco": "30/01/2024"
+    },
+    {
+      "id": "2",
       "quantidadeHomens": "10",
-      "quantidadeMulheres": "10",
-      "quantidadeCriancas": "10",
-      "quantidadePessoas": 30,
-      "quantidadePaoAlho": 50,
-      "quantidadeCarne": 9.2,
-      "quantidadeRefri": 6,
-      "quantidadeCerveja": 60,
-      "quantidadeCarvao": 30,
-      "dataChurrasco": "2024-02-02"
+      "quantidadeMulheres": "5",
+      "quantidadeCriancas": "5",
+      "quantidadePessoas": 20,
+      "quantidadePaoAlho": 35,
+      "quantidadeCarne": 6.6,
+      "quantidadeRefri": 4,
+      "quantidadeCerveja": 45,
+      "quantidadeCarvao": 20,
+      "dataChurrasco": "10/02/2024"
     }
   ]
 }
