@@ -1,5 +1,7 @@
 # Calculadora de Churrasco
 
+Alunos: Ana Patrícia, Haralan Santana, Victor Callegari, Eliza Reis, Anderson Silva e Junior Oliveira (Damião)
+
 ## Descrição
 
 Esta calculadora de churrasco foi desenvolvida pelo grupo CodeVerse durante o curso da ADA tech - Ifood. Ela permite que você insira a quantidade de pessoas para o churrasco e, em seguida, calcula automaticamente a quantidade de materiais necessários para o evento.
